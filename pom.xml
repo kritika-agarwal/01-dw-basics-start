@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
+ 
 	<groupId>com.mycompany</groupId>
-	<artifactId>01-dw-basics-start</artifactId>
+	<artifactId>saqlainmulesoft</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
-
-	<name>01-dw-basics-start</name>
-
+ 
+	<name>saqlainmulesoftnew</name>
+ 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
+ 
 		<app.runtime>4.5.1</app.runtime>
 		<mule.maven.plugin.version>4.0.0</mule.maven.plugin.version>
 	</properties>
-
+ 
 	<build>
 		<plugins>
 			<plugin>
@@ -27,12 +29,29 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<version>4.0.0</version>
 				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>${app.runtime}</muleVersion>
+						<connectedAppClientId>1c7e6ae27121485ea728eb489a08c86d</connectedAppClientId>
+						<connectedAppClientSecret>C08b93DED9Fc41448061176aAA64ac30</connectedAppClientSecret>
+						<applicationName>SaqlainMS</applicationName>
+						<connectedAppGrantType>client_credentials</connectedAppGrantType>
+						<environment>Sandbox</environment>
+						<region>us-east-1</region>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
+						<properties>
+							<key>value</key>
+						</properties>
+					</cloudHubDeployment>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
+ 
 	<dependencies>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
@@ -47,7 +66,7 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
-
+ 
 	<repositories>
 		<repository>
 			<id>anypoint-exchange-v3</id>
@@ -62,7 +81,7 @@
 			<layout>default</layout>
 		</repository>
 	</repositories>
-
+ 
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-releases</id>
@@ -74,5 +93,6 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
+ 
 </project>
+ 
