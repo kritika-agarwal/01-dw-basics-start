@@ -37,7 +37,7 @@
 						<muleVersion>${app.runtime}</muleVersion>
 						<connectedAppClientId>1c7e6ae27121485ea728eb489a08c86d</connectedAppClientId>
 						<connectedAppClientSecret>C08b93DED9Fc41448061176aAA64ac30</connectedAppClientSecret>
-						<applicationName>SaqlainMS</applicationName>
+						<applicationName>Saql71122</applicationName>
 						<connectedAppGrantType>client_credentials</connectedAppGrantType>
 						<environment>Sandbox</environment>
 						<region>us-east-1</region>
